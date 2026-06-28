@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import BrandLogo from "../assets/brandLogo.png";
 import "../Styles_CSS_Code/Signin.css";
+import loginImage from "../assets/loginImage.png"
 
 function Signin() {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -53,6 +54,14 @@ function Signin() {
         <p className="auth-footer">
           Don't have an account? <a href="/signupNew" className="auth-signup-link">Create one</a>
         </p>
+      </div>
+
+      <div>
+        <img
+          src={loginImage}
+          alt="image"
+          className="ImageLogin"
+        />
       </div>
     </div>
   );
