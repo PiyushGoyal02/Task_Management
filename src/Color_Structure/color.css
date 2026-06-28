@@ -1,0 +1,76 @@
+:root {
+    /* ===========================
+      BACKGROUND
+  ============================ */
+    --bg-page: #0B1220;
+    --bg-navbar: #121A2B;
+    --bg-input: #182235;
+    --bg-active: #22314A;
+    --bg-card: #161F30;
+    --bg-footer: #08101D;
+
+    /* ===========================
+      TEXT
+  ============================ */
+    --text-heading: #F8FAFC;
+    --text-primary: #E2E8F0;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --text-navbar: #CBD5E1;
+    --text-navbar-active: #12C8B4;
+    --text-footer: #94A3B8;
+    --text-footer-muted: #64748B;
+    --text-accent: #12C8B4;
+
+    /* ===========================
+      BRAND COLORS
+  ============================ */
+    --primary: #12C8B4;
+    /* Teal */
+    --secondary: #1F7DFF;
+    /* Blue */
+    --success: #74D62F;
+    /* Green */
+    --dark: #0F172A;
+    /* Navy */
+
+    /* ===========================
+      BUTTONS
+  ============================ */
+    --btn-primary-bg: #12C8B4;
+    --btn-primary-hover: #0FA998;
+    --btn-primary-text: #FFFFFF;
+    --btn-primary-shadow: rgba(18, 200, 180, .25);
+
+    /* Aliases for older component CSS names */
+    --btn-bg: var(--btn-primary-bg);
+    --btn-hover: var(--btn-primary-hover);
+    --btn-text: var(--btn-primary-text);
+    --text-link: var(--primary);
+
+    --btn-secondary-bg: #1F7DFF;
+    --btn-secondary-hover: #1668D4;
+    --btn-secondary-text: #FFFFFF;
+
+    --btn-danger-bg: #FF4D4F;
+    --btn-danger-text: #FFFFFF;
+
+    --btn-navbar-bg: #12C8B4;
+    --btn-navbar-text: #FFFFFF;
+
+    /* ===========================
+      ICONS
+  ============================ */
+    --icon-default: #94A3B8;
+    --icon-active: #12C8B4;
+    --icon-success: #74D62F;
+    --icon-danger: #EF4444;
+    --icon-navbar: #CBD5E1;
+    --icon-footer: #64748B;
+
+    /* ===========================
+      BORDERS
+  ============================ */
+    --border: #23324A;
+    --border-strong: #324763;
+}
