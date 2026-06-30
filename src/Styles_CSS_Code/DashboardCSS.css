@@ -1,0 +1,42 @@
+.CardsSectionDiv {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 25px;
+}
+
+.DashBoardCards {
+  width: 250px;
+  padding: 20px;
+  border-radius: 15px;
+  background: #1d2843;
+  color: white;
+  transition: 0.3s;
+}
+
+.DashBoardCards:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.iconText {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #9ca3af;
+}
+
+.iconText p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.DashBoardCards h2 {
+  margin: 20px 0 8px;
+  font-size: 36px;
+}
+
+.DashBoardCards span {
+  color: #9ca3af;
+  font-size: 14px;
+}

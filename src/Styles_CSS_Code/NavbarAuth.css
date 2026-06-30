@@ -1,0 +1,32 @@
+.navbar-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 64px;
+  background-color: rgba(20, 28, 47, 0.94);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Logo */
+.navbar-logo {
+  width: 110px;
+  object-fit: cover;
+}
+
+.CreateAcc-Button{
+  border-radius: 10px;
+  border-style: none;
+  padding: 7px;
+  background-color: var(--btn-navbar-bg);
+  color: var(--btn-navbar-text);
+  transition: all ease 0.25s;
+}
+
+.CreateAcc-Button:hover{
+  background-color: var(--btn-secondary-hover);
+  color: var(--btn-secondary-text);
+}
+
+
+

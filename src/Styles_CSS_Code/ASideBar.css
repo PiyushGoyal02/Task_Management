@@ -1,0 +1,132 @@
+.ASideBarContainer {
+  width: 20%;
+  min-height: 900px;
+  max-height: 1000px;
+  background: rgba(20, 28, 47, 0.94);
+  position: sticky;
+}
+
+.aSidemaintain {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 20px;
+  box-sizing: border-box;
+}
+
+.BrandImageDiv {
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
+  margin-bottom: 15px;
+  /* gap: 12px; */
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  cursor: pointer;
+}
+
+.BrandImageASide {
+  width: 120px;
+}
+
+.MenuText {
+  color: #6E7487;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.Icon-text-aSide {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #A8AFBF;
+  padding: 12px 15px;   
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 8px;
+}
+
+.Icon-text-aSide p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.Icon-text-aSide:hover {
+  background: #2d3b58;
+  color: white;
+}
+
+.ProjectSectionaSide {
+  margin-top: 35px;
+}
+
+.ProjectSectionaSide > p {
+  color: #6E7487;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.ProjectASideSection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #A8AFBF;
+  padding: 12px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: .3s;
+  margin-bottom: 8px;
+}
+
+.ProjectASideSection p {
+  margin: 0;
+}
+
+.ProjectASideSection:hover {
+  background: #2d3b58;
+  color: white;
+}
+
+.profiledetails {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  cursor: pointer;
+}
+
+.PG-Circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--secondary);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.PG-Circle p {
+  margin: 0;
+}
+
+.profiledetails p {
+  margin: 0;
+}
+
+.profiledetails p:first-child {
+  color: white;
+  font-weight: 600;
+}
+
+.profiledetails p:last-child {
+  color: #8B93A7;
+  font-size: 15px;
+}

@@ -6,15 +6,16 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Signin from './Authentication/Signin'
 import Signup from './Authentication/Signup'
+import Homepage from './Components/Homepage'
 
 function App() {
-  // console.log('Piyush Goyal')
   return (
     <div>
       
       <Routes>
         <Route path='/' element={<Signin/>}></Route>
-        <Route path='/signupNew' element={<Signup/>}></Route>
+        <Route path='/signupRoute' element={<Signup/>}></Route>
+        <Route path='/homepage' element={<Homepage/>}></Route>
       </Routes>
     </div>
   )

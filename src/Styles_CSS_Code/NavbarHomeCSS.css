@@ -1,0 +1,75 @@
+.navbar-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 64px;
+  background-color: rgba(20, 28, 47, 0.94);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Logo */
+.navbar-logo {
+  width: 110px;
+  object-fit: cover;
+}
+
+/* Nav links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--text-navbar);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--text-navbar-active);
+  background-color: rgba(18, 200, 180, 0.08);
+}
+
+.navbar-links a.active {
+  color: var(--text-navbar-active);
+  background-color: rgba(18, 200, 180, 0.08);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-free-badge {
+  color: var(--success);
+  font-weight: 500;
+  font-size: 12px;
+  border: 1.5px solid var(--success);
+  padding: 4px 12px;
+  border-radius: 50px;
+  background-color: rgba(116, 214, 47, 0.08);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.navbar-free-badge:hover {
+  background-color: rgba(116, 214, 47, 0.15);
+}
+
+.navbar-user-icon {
+  color: var(--icon-navbar);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.navbar-user-icon:hover {
+  color: var(--text-navbar-active);
+}

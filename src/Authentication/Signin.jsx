@@ -3,8 +3,14 @@ import { Link } from "react-router-dom";
 import BrandLogo from "../assets/brandLogo.png";
 import "../Styles_CSS_Code/Signin.css";
 import loginImage from "../assets/loginImage.png"
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import NavbarAuth from "../Navbar/NavbarAuth";
 
 function Signin() {
+
+  const Navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
 
   const handleChange = (event) => {
@@ -12,56 +18,77 @@ function Signin() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     console.log("Signin data:", formData);
-    // TODO: send formData to your auth API
+    try {
+
+      const response = await axios.post(`http://localhost:4000/api/v1/authRoutes/signin`, formData, {
+        headers: { "Content-Type": "application/json" },
+      })
+
+      console.log(response.data)
+      toast.success("Successfully Signin !", {
+        position: "top-center",
+      });
+      Navigate('/homepage')
+
+    } catch (error) {
+      console.log(error.message)
+      toast.error("Signin Error !", {
+        position: "bottom-left",
+      });
+    }
   };
 
   return (
-    <div className="auth-page">
-      <div className="auth-card">
-        <img src={BrandLogo} alt="Brand logo" className="auth-logo" />
-        <h2>Welcome back!</h2>
-        <p>Sign in to your workspace</p>
+    <div>
+      <NavbarAuth/>
 
-        <form className="auth-form" onSubmit={handleSubmit}>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="you@company.com"
-            value={formData.email}
-            onChange={handleChange}
-            required
+      <div className="auth-page">
+        <div className="auth-card">
+          <img src={BrandLogo} alt="Brand logo" className="auth-logo" />
+          <h2>Welcome back!</h2>
+          <p>Sign in to your workspace</p>
+
+          <form className="auth-form" onSubmit={handleSubmit}>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@company.com"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+
+            <button type="submit">Sign In</button>
+          </form>
+
+          <p className="auth-footer">
+            Don't have an account? <a href="/signupRoute" className="auth-signup-link">Create one</a>
+          </p>
+        </div>
+
+        {/* <div>
+          <img
+            src={loginImage}
+            alt="image"
+            className="ImageLogin"
           />
-
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter your password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-
-          <button type="submit">Sign In</button>
-        </form>
-
-        <p className="auth-footer">
-          Don't have an account? <a href="/signupNew" className="auth-signup-link">Create one</a>
-        </p>
-      </div>
-
-      <div>
-        <img
-          src={loginImage}
-          alt="image"
-          className="ImageLogin"
-        />
+        </div> */}
       </div>
     </div>
   );

@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import BrandLogo from "../assets/brandLogo.png";
 import loginImage from "../assets/loginImage.png";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../Styles_CSS_Code/Signup.css";
+import axios from "axios";
+import { toast } from "react-toastify";
+import NavbarAuth from "../Navbar/NavbarAuth";
 
 function Signup() {
+  const Navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -18,98 +22,118 @@ function Signup() {
     setFormData((p) => ({ ...p, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.password !== formData.confirmpassword) {
       alert("Passwords do not match");
       return;
     }
     console.log("Signup data:", formData);
-    // TODO: send to signup API
+    try {
+      const response = await axios.post(`http://localhost:4000/api/v1/authRoutes/signup`, formData, {
+        headers: { "Content-Type": "application/json" },
+      })
+
+      console.log(response.data)
+      toast.success('Successfully Signup !', {
+        position: "bottom-left",
+      })
+      Navigate('/homepage')
+    } catch (error) {
+      console.log(error.message)
+      toast.error("Signin Error !", {
+        position: "bottom-left",
+      });
+    }
+
   };
 
   return (
-    <div className="signup-page">
-      {/* Left Side Form Data */}
-      <div className="signup-card">
-        <img src={BrandLogo} alt="Brand logo" className="signup-logo" />
-        <h2>Create account</h2>
-        <p>Start managing your team's work</p>
+    <div>
+      <NavbarAuth/>
 
-        <form className="signup-form" onSubmit={handleSubmit}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
-            <div>
-              <label htmlFor="firstname">First Name</label>
-              <input
-                required
-                type="text"
-                id="firstname"
-                name="firstname"
-                placeholder="Ram"
-                value={formData.firstname}
-                onChange={handleChange}
-              />
+      <div className="signup-page">
+        {/* Left Side Form Data */}
+        <div className="signup-card">
+          <img src={BrandLogo} alt="Brand logo" className="signup-logo" />
+          <h2>Create account</h2>
+          <p>Start managing your team's work</p>
+
+          <form className="signup-form" onSubmit={handleSubmit}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem" }}>
+              <div className="FirstRow">
+                <label htmlFor="firstname">First Name</label>
+                <input
+                  required
+                  type="text"
+                  id="firstname"
+                  name="firstname"
+                  placeholder="Ram"
+                  value={formData.firstname}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="lastname">Last Name</label>
+                <input
+                  required
+                  type="text"
+                  id="lastname"
+                  name="lastname"
+                  placeholder="Goyal"
+                  value={formData.lastname}
+                  onChange={handleChange}
+                />
+              </div>
             </div>
-            <div>
-              <label htmlFor="lastname">Last Name</label>
-              <input
-                required
-                type="text"
-                id="lastname"
-                name="lastname"
-                placeholder="Goyal"
-                value={formData.lastname}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
 
-          <label htmlFor="email">Email</label>
-          <input
-            required
-            type="email"
-            id="email"
-            name="email"
-            placeholder="you@company.com"
-            value={formData.email}
-            onChange={handleChange}
-          />
+            <label htmlFor="email">Email</label>
+            <input
+              required
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@company.com"
+              value={formData.email}
+              onChange={handleChange}
+            />
 
-          <label htmlFor="password">Password</label>
-          <input
-            required
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter password"
-            value={formData.password}
-            onChange={handleChange}
-          />
+            <label htmlFor="password">Password</label>
+            <input
+              required
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter password"
+              value={formData.password}
+              onChange={handleChange}
+            />
 
-          <label htmlFor="confirmpassword">Confirm password</label>
-          <input
-            required
-            type="password"
-            id="confirmpassword"
-            name="confirmpassword"
-            placeholder="Confirm password"
-            value={formData.confirmpassword}
-            onChange={handleChange}
-          />
+            <label htmlFor="confirmpassword">Confirm password</label>
+            <input
+              required
+              type="password"
+              id="confirmpassword"
+              name="confirmpassword"
+              placeholder="Confirm password"
+              value={formData.confirmpassword}
+              onChange={handleChange}
+            />
 
-          <button className="signup-button" type="submit">Create account</button>
-        </form>
+            <button className="signup-button" type="submit">Create account</button>
+          </form>
 
-        <p className="signup-footer">
-          Already have an account? <Link to="/" className="signup-link">Sign in</Link>
-        </p>
+          <p className="signup-footer">
+            Already have an account? <a href="/" className="signup-link">Sign in</a>
+          </p>
+        </div>
+
+        {/* Right Side Image */}
+        {/* <div>
+          <img src={loginImage} alt="signup" className="signup-image" />
+        </div> */}
+
       </div>
-
-      {/* Right Side Image */}
-      <div>
-        <img src={loginImage} alt="signup" className="signup-image" />
-      </div>
-
     </div>
   );
 }

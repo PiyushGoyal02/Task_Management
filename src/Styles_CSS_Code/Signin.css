@@ -1,11 +1,9 @@
 .auth-page {
-  min-height: 100vh;
+  height: auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
+  justify-content: center;
   padding: 2rem 3rem;
-  flex-wrap: wrap;
 }
 
 .auth-card {
@@ -86,7 +84,7 @@
 }
 
 .auth-footer {
-  margin-top: 1.5rem;
+  padding-top: 20px;
   font-size: 0.95rem;
   color: var(--text-secondary);
   text-align: center;
