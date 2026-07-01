@@ -68,6 +68,7 @@ function Members() {
         </div>
       </div>
 
+
       <div className="MembersList">
         {filteredUsers.length > 0 ? (
           filteredUsers.map((user) => (
@@ -85,14 +86,14 @@ function Members() {
               <div className="UserAction">
                 <p className="UserType">{user.AccType}</p>
 
-                <button className="MoreBtn">
+                <p className="MoreBtn">
                   <Ellipsis />
-                </button>
+                </p>
               </div>
             </div>
           ))
         ) : (
-          <p className="NoUserFound">No members found.</p>
+          <p className="NoUserFound">No member found.</p>
         )}
       </div>
     </div>

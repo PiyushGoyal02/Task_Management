@@ -1,20 +1,126 @@
-.headingSection{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
-}
-
-.LengthMembers-text{
-  font-size: 25px;
-  font-weight: 500;
+.MembersContainer {
+  width: 100%;
+  padding: 20px;
   color: white;
 }
 
-.UserDetailSection{
-  border: 1px solid white;
+.headingSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.LengthMembers-text {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.Searchbar-InputBar {
   display: flex;
   align-items: center;
-  background-color: #161b27;
-  color: #fefefe;
+  gap: 8px;
+  background: #161b27;
+  border: 1px solid #2b3345;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.Search-text-bar {
+  border: none;
+  /* outline: none; */
+  background: transparent;
+  color: white;
+  width: 220px;
+  font-size: 15px;
+}
+
+.Search-text-bar::placeholder {
+  color: #8b93a7;
+}
+
+.MembersList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* width: 100%; */
+}
+
+.UserDetailSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #161b27;
+  border: 1px solid #2d3446;
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+.NickCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #0b1e35;
+  border: 1px solid #18518c;
+  color: #7dade0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.UserInfo {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.UserName {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.UserEmail {
+  color: #777e91;
+  font-size: 14px;
+}
+
+.UserAction {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.UserType {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 32px;
+  border-radius: 30px;
+  background: #0b1e35;
+  color: #7aa9dc;
+  border: 1px solid #175696;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.MoreBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #b5bccd;
+}
+
+.MoreBtn:hover {
+  color: white;
+}
+
+.NoUserFound {
+  text-align: center;
+  color: #888;
+  padding: 20px;
 }
