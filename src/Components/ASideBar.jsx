@@ -1,9 +1,19 @@
 import React from "react";
-import { House, CircleCheckBig, Flame, BellRing, GamepadDirectional } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 import "../Styles_CSS_Code/ASideBar.css"
 import BrandLogo from "../assets/brandLogo.png"
+import Homepage from "./Homepage";
+import { useState } from "react";
+import { House, CircleCheckBig, Flame, BellRing, GamepadDirectional } from 'lucide-react';
 
 function ASideBar () {
+
+  const Navigator = useNavigate();
+  
+  const [active, setActive] = useState("dashboard");
+
+  // return { Active, setActive } = Homepage();
+
   return (
     <div className="ASideBarContainer">
       
@@ -20,21 +30,20 @@ function ASideBar () {
         {/* Menu Text */}
         <p className="MenuText">Menu</p>
 
-
         {/* Menu aSide Section */}
         <div>
 
-          <div className="Icon-text-aSide">
+          <div onClick={() => setActive('dashboard')} className="Icon-text-aSide">
             <House/>
             <p> Dashboard</p>
           </div>
 
-          <div className="Icon-text-aSide">
+          <div onClick={() => setActive('MyTasks')} className="Icon-text-aSide">
             <CircleCheckBig/>
             <p> My Task </p>
           </div>
 
-          <div className="Icon-text-aSide">
+          <div onClick={() => setActive('Members')} className="Icon-text-aSide">
             <Flame/>
             <p> Members </p>
           </div>
@@ -68,7 +77,7 @@ function ASideBar () {
         </div>
 
         {/* Profile User Detail */}
-        <div className="profiledetails">
+        <div onClick={() => setActive('Profile')} className="profiledetails">
           <div className="PG-Circle">
             <p >PG</p>
           </div>

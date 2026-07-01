@@ -1,0 +1,169 @@
+.profileContainer {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profileCard {
+  width: 100%;
+  max-width: 800px;
+  background: #161b27;
+  border: 1px solid #2b3345;
+  border-radius: 14px;
+  padding: 30px;
+}
+
+.profileTitle {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.profileForm {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputLabel {
+  color: #8c93a8;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.textInput,
+.textArea {
+  width: 100%;
+  background: #0f1724;
+  border: 1px solid #31394d;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  padding: 12px 16px;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.textInput::placeholder,
+.textArea::placeholder {
+  color: #6d7487;
+}
+
+.textInput:focus,
+.textArea:focus {
+  border-color: #3b82f6;
+}
+
+.textArea {
+  min-height: 120px;
+  max-height: auto;
+}
+
+.buttonContainer {
+  margin-top: 10px;
+}
+
+.saveButton {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.saveButton:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* Change Password Container*/
+.changePasswordContainer {
+  width: 400px;
+  background: #161b27;
+  border: 1px solid #2b3345;
+  border-radius: 14px;
+  padding: 30px;
+  gap: 20px;
+}
+
+.profilePhotoContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #2b3345;
+  padding: 30px;
+  border-radius: 10px;
+  background:#161b27;
+}
+
+.profilePhoto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #31394d;
+  margin: 0 auto 25px;
+}
+
+.profilePhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.AdminTaskFlowText{
+  color: #8b92a7;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.profileStats{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 30px;
+}
+
+.profileBoxes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: #1e2435;
+  border-radius: 10px;
+  color: #85b7ec;
+  /* gap: 5px; */
+}
+
+.UploadButton{
+  margin-top: 20px;
+}
+
+.ChangePasswordButton{
+  margin-top: 20px;
+}

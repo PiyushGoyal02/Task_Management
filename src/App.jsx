@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom'
 import Signin from './Authentication/Signin'
 import Signup from './Authentication/Signup'
 import Homepage from './Components/Homepage'
+import ProfileSection from "./Components/ProfileSection"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element={<Signin/>}></Route>
         <Route path='/signupRoute' element={<Signup/>}></Route>
         <Route path='/homepage' element={<Homepage/>}></Route>
+        <Route path='/profileSection' element={<ProfileSection/>}></Route>
       </Routes>
     </div>
   )
