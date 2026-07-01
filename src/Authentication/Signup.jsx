@@ -8,6 +8,8 @@ import { toast } from "react-toastify";
 import NavbarAuth from "../Navbar/NavbarAuth";
 
 function Signup() {
+
+  const [loading, setLoading] = useState(false);
   const Navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstname: "",
@@ -24,8 +26,10 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     if (formData.password !== formData.confirmpassword) {
       alert("Passwords do not match");
+      setLoading(false);
       return;
     }
     console.log("Signup data:", formData);
@@ -35,17 +39,21 @@ function Signup() {
       })
 
       console.log(response.data)
-      toast.success('Successfully Signup !', {
-        position: "bottom-left",
+      toast.success("Signup Successful!", {
+        position: "top-right",
+        autoClose: 3000,
+        theme: "dark",
       })
       Navigate('/homepage')
     } catch (error) {
       console.log(error.message)
-      toast.error("Signin Error !", {
-        position: "bottom-left",
-      });
+      toast.error("Signup Error!", {
+        position: "top-right",
+        autoClose: 3000,
+        theme: "dark",
+      })
+      setLoading(false);
     }
-
   };
 
   return (
@@ -120,7 +128,13 @@ function Signup() {
               onChange={handleChange}
             />
 
-            <button className="signup-button" type="submit">Create account</button>
+            {
+              loading ? (
+                <button className="signup-button" type="submit">Loading..</button>
+              ) : (
+                <button className="signup-button" type="submit">Create account</button>
+              )
+            }
           </form>
 
           <p className="signup-footer">

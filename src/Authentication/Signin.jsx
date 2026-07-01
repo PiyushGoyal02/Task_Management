@@ -11,6 +11,7 @@ import NavbarAuth from "../Navbar/NavbarAuth";
 function Signin() {
 
   const Navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
 
   const handleChange = (event) => {
@@ -20,24 +21,29 @@ function Signin() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     console.log("Signin data:", formData);
     try {
 
       const response = await axios.post(`http://localhost:4000/api/v1/authRoutes/signin`, formData, {
         headers: { "Content-Type": "application/json" },
       })
-
       console.log(response.data)
-      toast.success("Successfully Signin !", {
-        position: "top-center",
+      toast.success("Successfully Signed in!", {
+        position: "top-right",   
+        autoClose: 2000,           
+        theme: "dark",            
       });
       Navigate('/homepage')
 
     } catch (error) {
       console.log(error.message)
-      toast.error("Signin Error !", {
-        position: "bottom-left",
+      toast.error("Signin Error!", {
+        position: "top-right",   
+        autoClose: 2000,           
+        theme: "dark",            
       });
+      setLoading(false);
     }
   };
 
@@ -74,7 +80,14 @@ function Signin() {
               required
             />
 
-            <button type="submit">Sign In</button>
+            {
+              loading ? (
+                <button type="submit">Loading..</button>
+              ) : (
+                <button type="submit">Sign In</button>
+              )
+            }
+            
           </form>
 
           <p className="auth-footer">
